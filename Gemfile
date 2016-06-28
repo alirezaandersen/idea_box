@@ -12,7 +12,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'responders', '~> 2.0'
 gem 'sprockets'
 gem 'sprockets-es6'
-gem 'browserify-rails'
+gem 'turbolinks'
+gem 'bootstrap', '~> 4.0.0.alpha3'
 
 group :development, :test do
   gem 'byebug'

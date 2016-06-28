@@ -7,6 +7,10 @@ module Api
           respond_with :api, :v1, idea
         end
 
+        def new
+          @idea = Idea.new
+        end 
+
         def update
           respond_with Idea.update(params[:id], idea_params)
         end
