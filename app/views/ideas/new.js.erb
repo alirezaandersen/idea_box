@@ -1,2 +1,2 @@
-$('#idea-form').html("<%= j (render 'form') %>");
+$('#idea-form').html("<%= escape_javascript(render 'form', locals:{idea:@idea}) %>");
 $('#idea-form').slideDown(350);

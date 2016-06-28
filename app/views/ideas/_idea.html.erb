@@ -1,21 +1,18 @@
-<% @ideas.each do |idea| %>
-<div class="row idea-cards" data-filter="true" data-input=".filter-input" id=
-    "idea-16">
-      <div class="col s12 m6">
-        <div class="card green">
-          <div class="card-content white-text">
-            <span contenteditable="true" id="title-16" class="card-title"><%= idea.title %></span><br />
 
-            <p class="card-body" contenteditable="true" id="body-16"><%= idea.body %></p>
-          </div>
 
-          <div class="card-action">
-            <p class="cyan-text text-lighten-4" id="quality-16"><%= idea.quality %></p><button id=
-            "upvote-16" class="upvote-idea btn cyan accent-4">Upvote!</button><button id=
-            "downvote-16" class="downvote-idea btn amber">Downvote!</button><button id=
-            "16" class="delete-idea btn purple lighten-2">Delete</button>
-          </div>
-        </div>
-      </div>
-    </div>
-<% end %>
+<li class="list-group-item list-group-item-info">
+  Title: <%= idea.title %><br>
+
+  <span class="deadline">Body: <%= idea.body %></span><br>
+  Quality: <%= idea.quality %>
+
+  <span class="edit">
+    <%= link_to edit_idea_path(idea), remote: true do %>
+      <button class="btn btn-primary btn-xs">Edit</button>
+    <% end %>
+
+    <%= link_to idea, remote: true, method: :delete,  data: { confirm: 'Are you sure?' } do %>
+      <button>Delete!</button>
+    <% end %>
+  </span>
+</li>
