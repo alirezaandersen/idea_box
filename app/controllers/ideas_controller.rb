@@ -32,6 +32,11 @@ class IdeasController < ApplicationController
   def set_ideas
     @idea = Idea.find(params[:id])
   end
+
+  def quality
+    
+  end
+
   def idea_params
     params.require(:idea).permit(:title, :body, :quality)
   end
