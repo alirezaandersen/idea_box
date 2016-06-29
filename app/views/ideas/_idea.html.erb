@@ -4,11 +4,11 @@
   <span class="bodyline">Body: <%= idea.body %></span><br>
   <span class="qualityline">Quality: <%= idea.quality %></span><br>
 
-  <%= link_to 'quality', remote:true do %>
+  <%= link_to upvote_path(idea), method: :put, remote:true do %>
   <span class="glyphicon glyphicon-thumbs-up"></span>
   <% end  %>
 
-  <%= link_to 'quality', remote:true do  %>
+  <%= link_to downvote_path(idea),method: :put, remote:true do  %>
   <span class="glyphicon glyphicon-thumbs-down"></span>
   <% end  %>
 

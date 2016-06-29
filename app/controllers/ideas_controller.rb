@@ -23,7 +23,17 @@ class IdeasController < ApplicationController
     respond_with Idea.find(params[:id]).destroy
   end
 
+  def upvote
+    Idea.upvote(params[:id])
+  end
+
+  def downvote
+    binding.pry
+  end
+
   private
+
+
 
   def all_ideas
     @ideas = Idea.all
@@ -31,10 +41,6 @@ class IdeasController < ApplicationController
 
   def set_ideas
     @idea = Idea.find(params[:id])
-  end
-
-  def quality
-    
   end
 
   def idea_params
