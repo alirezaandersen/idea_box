@@ -1,10 +1,16 @@
-
-
 <li class="list-group-item list-group-item-info">
   Title: <%= idea.title %><br>
 
-  <span class="deadline">Body: <%= idea.body %></span><br>
-  Quality: <%= idea.quality %>
+  <span class="bodyline">Body: <%= idea.body %></span><br>
+  <span class="qualityline">Quality: <%= idea.quality %></span><br>
+
+  <%= link_to '#', remote:true do %>
+  <span class="glyphicon glyphicon-thumbs-up"></span>
+  <% end  %>
+
+  <%= link_to '#', remote:true do  %>
+  <span class="glyphicon glyphicon-thumbs-down"></span>
+  <% end  %>
 
   <span class="edit">
     <%= link_to edit_idea_path(idea), remote: true do %>

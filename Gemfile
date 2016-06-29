@@ -13,7 +13,7 @@ gem 'responders', '~> 2.0'
 gem 'sprockets'
 gem 'sprockets-es6'
 gem 'turbolinks'
-gem 'simple_form'
+gem 'simple_form', '~> 3.1.0.rc1'
 gem 'bootstrap', '~> 4.0.0.alpha3'
 
 group :development, :test do
