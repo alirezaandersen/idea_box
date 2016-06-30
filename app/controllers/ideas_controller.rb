@@ -20,7 +20,6 @@ class IdeasController < ApplicationController
   end
 
   def destroy
-    # binding.pry
     respond_with Idea.find(params[:id]).destroy
   end
 

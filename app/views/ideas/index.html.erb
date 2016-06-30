@@ -2,8 +2,8 @@
 <div class="row">
 
   <div class="col-md-5 col-md-offset-1">
-    <h2>Ideas</h2>
-    <input type="text" name="search" id="search">
+    <h2>Ideas</h2><br><br>
+    Search: <input type="text" name="search" id="search", placeholder="Search">
   </div>
 
   <div class="col-md-2 col-md-offset-4">
@@ -12,11 +12,16 @@
     <% end %>
   </div>
 </div>
-
+<div class="row">
+  <div class="col-md-offset-1 col-md-6">
+    <a href="#" id="sort_by_quality">Sort</a>&nbsp;|&nbsp;
+    <a href="#" id="sort_by_original">Original</a>
+  </div>
+</div>
 <div class="row">
   <div class="col-md-6 col-md-offset-2" id="idea-form" style="display:none;"></div>
 </div>
 
 <div class="row">
-  <div class="col-md-7 col-md-offset-1" id="ideas"><%= render @ideas %></div>
+  <div class="col-md-7 col-md-offset-1 grid" id="ideas"><%= render @ideas %></div>
 </div>
