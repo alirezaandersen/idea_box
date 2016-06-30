@@ -1,7 +1,7 @@
 class IdeasController < ApplicationController
   before_action :all_ideas, only: [:index, :create, :update, :destroy]
   before_action :set_ideas, only: [:edit, :update, :destroy]
-  respond_to :html, :js
+  respond_to :html, :js, :json
 
   def index
     @ideas = Idea.all
@@ -12,12 +12,14 @@ class IdeasController < ApplicationController
   end
 
   def create
+  #  binding.pry
     idea = Idea.create(idea_params)
   end
 
   def update
-    binding.pry
+    #binding.pry
     respond_with Idea.update(params[:id], idea_params)
+    #binding.pry
   end
 
   def destroy
@@ -26,10 +28,12 @@ class IdeasController < ApplicationController
 
   def upvote
     Idea.upvote(params[:id])
+    render nothing: true
   end
 
   def downvote
     Idea.downvote(params[:id])
+    render nothing: true
   end
 
   private

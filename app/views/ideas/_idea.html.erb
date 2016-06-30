@@ -5,19 +5,19 @@
   <span class="qualityLabel">Quality:</span> <span class="qualityValue"><%= idea.quality %></span><br>
 
   <%= link_to upvote_path(idea), method: :put, remote:true do %>
-  <span class="glyphicon glyphicon-thumbs-up"></span>
+  <span class="glyphicon glyphicon-thumbs-up upvote"></span>
   <% end  %>
 
   <%= link_to downvote_path(idea),method: :put, remote:true do  %>
-  <span class="glyphicon glyphicon-thumbs-down"></span>
+  <span class="glyphicon glyphicon-thumbs-down downvote"></span>
   <% end  %>
 
   <span class="edit">
-    <%= link_to edit_idea_path(idea), remote: true do %>
+    <!-- <%#= link_to edit_idea_path(idea), remote: true do %>
       <button class="btn btn-primary btn-xs">Edit</button>
-    <% end %>
+    <%# end %> -->
 
-    <%= link_to idea, remote: true, method: :delete,  data: { confirm: 'Are you sure?' } do %>
+    <%= link_to idea, remote: true, method: :delete do %>
       <button>Delete!</button>
     <% end %>
   </span>
