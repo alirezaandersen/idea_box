@@ -16,6 +16,7 @@ class IdeasController < ApplicationController
   end
 
   def update
+    binding.pry
     respond_with Idea.update(params[:id], idea_params)
   end
 
@@ -28,12 +29,10 @@ class IdeasController < ApplicationController
   end
 
   def downvote
-    binding.pry
+    Idea.downvote(params[:id])
   end
 
   private
-
-
 
   def all_ideas
     @ideas = Idea.all

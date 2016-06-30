@@ -1,8 +1,8 @@
-<li class="list-group-item list-group-item-info">
-  Title: <%= idea.title %><br>
+<li class="list-group-item list-group-item-info" id="idea<%=idea.id%>">
+  <span class="titleLabel">Title:</span> <span class="titleValue"><%= idea.title %></span><br>
 
-  <span class="bodyline">Body: <%= idea.body %></span><br>
-  <span class="qualityline">Quality: <%= idea.quality %></span><br>
+  <span class="bodyLabel">Body:</span> <span class="bodyValue"><%= idea.body %></span><br>
+  <span class="qualityLabel">Quality:</span> <span class="qualityValue"><%= idea.quality %></span><br>
 
   <%= link_to upvote_path(idea), method: :put, remote:true do %>
   <span class="glyphicon glyphicon-thumbs-up"></span>
