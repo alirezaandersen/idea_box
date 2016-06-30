@@ -12,17 +12,15 @@ class IdeasController < ApplicationController
   end
 
   def create
-  #  binding.pry
     idea = Idea.create(idea_params)
   end
 
   def update
-    #binding.pry
     respond_with Idea.update(params[:id], idea_params)
-    #binding.pry
   end
 
   def destroy
+    binding.pry
     respond_with Idea.find(params[:id]).destroy
   end
 
