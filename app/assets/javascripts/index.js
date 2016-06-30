@@ -4,6 +4,7 @@ function setup_events(){
   setup_destroy_events();
   setup_quality_events();
   setup_idea_events();
+  console.log('setup_events called()');
 }
   $(document).ready(function() {
   //$(window).bind('page:change', function(){
