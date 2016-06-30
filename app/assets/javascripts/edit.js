@@ -41,11 +41,13 @@ function setup_idea_events(){
     }
 
     //event listener activates edit/update ajax when leaving .titleValue input
+    $('.titleValue').unbind('blur');
     $('.titleValue').on('blur', function() {
         get_data($(this));
     })
 
     //event listener activates edit/update ajax when leaving .bodyValue input
+    $('.bodyValue').unbind('blur');
     $('.bodyValue').on('blur', function() {
         get_data($(this));
     })
