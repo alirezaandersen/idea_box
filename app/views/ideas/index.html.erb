@@ -1,15 +1,14 @@
 
 <div class="row">
+
   <div class="col-md-5 col-md-offset-1">
     <h2>Ideas</h2>
+    <input type="text" name="search" id="search">
   </div>
 
   <div class="col-md-2 col-md-offset-4">
     <%= link_to new_idea_path, remote: true do %>
       <button class="btn btn-default">New</button>
-    <% end %>
-    <%= link_to '#', remote: true do %>
-      <button class="btn btn-default">Search</button>
     <% end %>
   </div>
 </div>

@@ -8,16 +8,12 @@
   <span class="glyphicon glyphicon-thumbs-up upvote"></span>
   <% end  %>
 
-  <%= link_to downvote_path(idea),method: :put, remote:true do  %>
+  <%= link_to downvote_path(idea), method: :put, remote:true do  %>
   <span class="glyphicon glyphicon-thumbs-down downvote"></span>
   <% end  %>
 
-  <span class="edit">
-    <!-- <%#= link_to edit_idea_path(idea), remote: true do %>
-      <button class="btn btn-primary btn-xs">Edit</button>
-    <%# end %> -->
-
-    <%= link_to idea, remote: true, method: :delete do %>
+  <span class="destroy_data">
+    <%= link_to idea_path(idea), method: :delete, remote: true do %>
       <button>Delete!</button>
     <% end %>
   </span>

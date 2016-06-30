@@ -9,7 +9,7 @@ function truncate() {
   });
 }
 
-$(document).ready(function() {
+function process(){
     //Grabs the AUTH_TOKEN to be able to update titleValue and bodyValue
     var AUTH_TOKEN = $('meta[name=csrf-token]').attr('content');
 
@@ -79,6 +79,48 @@ $(document).ready(function() {
     });
 
     //destroy - deletes and removes idea from page and data
+    $('destroy_data').on('click',function(){
+      var current_idea = $(this).idea;
+      $this.parent().parent().remove()
+      $.ajax({
+              type: "DELETE",
+              url: '/ideas/' + id,
+            });
+    });
+  }
 
+  function toLowerCase(val){
+    if(typeof val === "string"){
+      return val.toLowerCase();
+    }
+    return val;
+  }
 
-});
+  function setup_search(){
+    var title_words;
+    var body_words;
+
+    function searchMatch(title, body, searchStr) {
+      return title.indexOf(searchStr) >= 0 || body.indexOf(searchStr) >= 0;
+    }
+    $('#search').keyup(function (event) {
+      var input = toLowerCase(event.target.value);
+
+      console.log(input + '|' + title_words + '|' + body_words);
+      $('#ideas').children().each(function () {
+        title_words = toLowerCase($(this).find('.titleValue').text());
+        body_words = toLowerCase($(this).find('.bodyValue').text());
+        if (searchMatch(title_words, body_words, input)) {
+          $(this).show();
+        } else {
+          $(this).hide();
+        }
+      });
+    });
+  }
+
+  $(document).ready(function() {
+  //$(window).bind('page:change', function(){
+    setup_search();
+    process();
+  });
