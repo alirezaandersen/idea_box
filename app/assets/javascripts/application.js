@@ -14,4 +14,10 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require bootstrap-sprockets
-//= require_tree .
+//= require helpers
+//= require quality
+//= require search
+//= require isotope
+//= require edit
+//= require destroy
+//= require index

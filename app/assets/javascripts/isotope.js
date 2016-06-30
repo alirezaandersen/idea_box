@@ -1,6 +1,6 @@
+var $grid;
 
-
-function setup_sort(){
+function setup_sort_events(){
   $grid = $('.grid').isotope({
     layoutMode: 'vertical',
     getSortData: {

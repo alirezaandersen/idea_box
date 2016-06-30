@@ -1,11 +1,4 @@
-function toLowerCase(val){
-  if(typeof val === "string"){
-    return val.toLowerCase();
-  }
-  return val;
-}
-
-function setup_search(){
+function setup_search_events(){
   var title_words;
   var body_words;
 
