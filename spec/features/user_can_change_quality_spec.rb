@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature 'User can change the quality of an idea' do
-  xcontext 'when clicking on thumbs up' do
+  context 'when clicking on thumbs up' do
     scenario 'the idea quality goes up', js: true do
       create(:idea)
 

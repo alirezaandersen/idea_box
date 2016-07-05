@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature 'User can add a new idea' do
-  xscenario 'they see the newely created idea', js: true do
+  scenario 'they see the newely created idea', js: true do
     create(:idea)
     title = 'Sample Title'
     body = 'Sample Body'

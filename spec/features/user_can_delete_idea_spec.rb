@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature 'User can delete an idea' do
-  xit 'removes the idea from the list', js: true do
+  it 'removes the idea from the list', js: true do
     idea1 = create(:idea)
     idea2 = create(:idea)
 
