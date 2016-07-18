@@ -7,12 +7,12 @@ function setup_idea_events(){
 
     //ajax to edit/update
     function get_data(el) {
-        var p = el.parent();
+        var p  = el.parent();
         var id = p.attr("id");
-        var titleValue = p.find('.titleValue').text();
-        var bodyValue = p.find('.bodyValue').text();
+        var titleValue   = p.find('.titleValue').text();
+        var bodyValue    = p.find('.bodyValue').text();
         var qualityValue = p.find('.qualityValue').text();
-        console.log(id + " | " + titleValue + " | " + bodyValue + " | " + qualityValue);
+
         $.ajax({
                 type: "POST",
                 data: {
