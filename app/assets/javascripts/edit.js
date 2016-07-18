@@ -7,7 +7,7 @@ function setup_idea_events(){
 
     //ajax to edit/update
     function get_data(el) {
-        var p = el.parent()
+        var p = el.parent();
         var id = p.attr("id");
         var titleValue = p.find('.titleValue').text();
         var bodyValue = p.find('.bodyValue').text();
@@ -44,12 +44,12 @@ function setup_idea_events(){
     $('.titleValue').unbind('blur');
     $('.titleValue').on('blur', function() {
         get_data($(this));
-    })
+    });
 
     //event listener activates edit/update ajax when leaving .bodyValue input
     $('.bodyValue').unbind('blur');
     $('.bodyValue').on('blur', function() {
         get_data($(this));
-    })
+    });
 
   }
